@@ -1,3 +1,7 @@
 spring:
   application:
     name: demo-spring-ai
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when-missing

@@ -1,4 +1,4 @@
-# demo-spring-doc
+# demo-spring-ai
 
 [![Java CI with Gradle](https://github.com/olemerdy/demo-spring-ai/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/olemerdy/demo-spring-ai/actions/workflows/gradle-build.yml)
 [![CodeQL](https://github.com/olemerdy/demo-spring-ai/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/olemerdy/demo-spring-ai/actions/workflows/github-code-scanning/codeql)
