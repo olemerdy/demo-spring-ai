@@ -3,3 +3,5 @@ services:
     image: 'ollama/ollama:latest'
     ports:
       - '11434'
+    volumes:
+      - ${HOME}/.ollama:/root/.ollama:Z
