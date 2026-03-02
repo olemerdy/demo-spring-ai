@@ -6,17 +6,11 @@ plugins {
 }
 
 group = "org.lafeuille.demo"
-version = "0.0.1-SNAPSHOT"
-description = "demo-spring-ai"
 
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(24)
     }
-}
-
-repositories {
-    mavenCentral()
 }
 
 dependencies {
