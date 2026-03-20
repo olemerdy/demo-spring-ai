@@ -1,7 +1,8 @@
+---
 spring:
   application:
-    name: demo-spring-ai
+    name: "demo-spring-ai"
   ai:
     ollama:
       init:
-        pull-model-strategy: when-missing
+        pull-model-strategy: "when-missing"

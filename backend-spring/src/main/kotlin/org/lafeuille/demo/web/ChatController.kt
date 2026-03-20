@@ -10,14 +10,11 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping(path = ["api/chat"], produces = [MediaType.APPLICATION_JSON_VALUE])
 class ChatController(
-    private val chatService: ChatService
+    private val chatService: ChatService,
 ) {
-
     @GetMapping("joke")
-    fun joke(): ChatResponse =
-        chatService.getJoke()
+    fun joke(): ChatResponse = chatService.getJoke()
 
     @GetMapping("holidays")
-    fun holidays(): ChatResponse? =
-        chatService.getHolidays()
+    fun holidays(): ChatResponse? = chatService.getHolidays()
 }

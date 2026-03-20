@@ -3,6 +3,7 @@ plugins {
     embeddedKotlin("plugin.spring")
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.management)
+    alias(libs.plugins.spotless)
 }
 
 group = "org.lafeuille.demo"
@@ -48,6 +49,23 @@ dependencies {
 kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict", "-Xannotation-default-target=param-property")
+    }
+}
+
+spotless {
+    json {
+        target("src/**/*.json")
+        jackson()
+    }
+    kotlin {
+        ktlint()
+    }
+    kotlinGradle {
+        ktlint()
+    }
+    yaml {
+        target("src/**/*.yml")
+        jackson()
     }
 }
 
