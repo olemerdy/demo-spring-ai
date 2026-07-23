@@ -13,13 +13,13 @@ class TestcontainersConfiguration {
     @Bean
     @ServiceConnection
     fun ollamaContainer(): OllamaContainer {
-        val hostPath = System.getProperty("user.home") + "/.ollama"
+        val hostPath = System.getProperty("user.home") + "/.ollama/models"
         File(hostPath).mkdirs()
 
         val container = OllamaContainer("ollama/ollama")
         container.addFileSystemBind(
             hostPath,
-            "/root/.ollama",
+            "/root/.ollama/models",
             BindMode.READ_WRITE,
             SelinuxContext.SHARED,
         )
