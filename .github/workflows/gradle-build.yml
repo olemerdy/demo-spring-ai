@@ -13,6 +13,9 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/cache@v6
+        with:
+          path: ~/.ollama
       - uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
