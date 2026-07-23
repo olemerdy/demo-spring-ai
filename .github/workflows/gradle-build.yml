@@ -16,9 +16,9 @@ jobs:
       - uses: actions/cache@v6
         with:
           path: ~/.ollama/models
-          key: ${{ runner.os }}-ollama-${{ hashFiles('src/test/**') }}
+          key: ${{ runner.os }}-ollama-models-${{ hashFiles('src/test/**') }}
           restore-keys: |
-            ${{ runner.os }}-ollama-
+            ${{ runner.os }}-ollama-models-
       - uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
