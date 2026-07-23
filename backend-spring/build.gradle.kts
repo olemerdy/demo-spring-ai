@@ -33,8 +33,6 @@ dependencies {
     implementation(libs.bundles.jollyday)
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
-    developmentOnly("org.springframework.boot:spring-boot-docker-compose")
-    developmentOnly("org.springframework.ai:spring-ai-spring-boot-docker-compose")
 
     testImplementation("org.springframework.boot:spring-boot-starter-actuator-test")
     testImplementation("org.springframework.boot:spring-boot-starter-validation-test")
