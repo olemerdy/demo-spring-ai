@@ -17,13 +17,16 @@ class TestcontainersConfiguration {
         val hostPath = System.getProperty("user.home") + "/.ollama/models"
         File(hostPath).mkdirs()
 
-        val container = OllamaContainer("ollama/ollama")
-            .withEnv("OLLAMA_IGPU_ENABLE", "" + true)
-            .withEnv("HSA_OVERRIDE_GFX_VERSION", "10.3.0")
-            .withCreateContainerCmdModifier { it.hostConfig?.withDevices(
-                Device("rwm", "/dev/kfd", "/dev/kfd"),
-                Device("rwm", "/dev/dri", "/dev/dri")
-            ) }
+        val container =
+            OllamaContainer("ollama/ollama")
+                .withEnv("OLLAMA_IGPU_ENABLE", "" + true)
+                .withEnv("HSA_OVERRIDE_GFX_VERSION", "10.3.0")
+                .withCreateContainerCmdModifier {
+                    it.hostConfig?.withDevices(
+                        Device("rwm", "/dev/kfd", "/dev/kfd"),
+                        Device("rwm", "/dev/dri", "/dev/dri"),
+                    )
+                }
         container.addFileSystemBind(
             hostPath,
             "/root/.ollama/models",
