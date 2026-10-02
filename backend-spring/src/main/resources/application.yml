@@ -4,5 +4,8 @@ spring:
     name: "demo-spring-ai"
   ai:
     ollama:
+      chat:
+        options:
+          model: "mistral"
       init:
         pull-model-strategy: "when-missing"
